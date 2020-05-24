@@ -1,6 +1,6 @@
-(ns discover-weekly-retriever.core)
+(ns discover-weekly-retriever.core
+  (:require [com.stuartsierra.component :as component]
+            [discover-weekly-retriever.system :as system]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn -main []
+  (component/start (system/start-system "abc")))
