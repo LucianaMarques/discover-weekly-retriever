@@ -4,12 +4,11 @@
 (defrecord SpotifyApiClient [token]
   component/Lifecycle
 
-  (start [component]
+  (start [this]
     (print token))
 
-  (stop [component]
+  (stop [this]
     (print "bye")))
 
 (defn new-spotify-api-client [token]
-  (component/using
-    (map->SpotifyApiClient {:token token})))
+  (map->SpotifyApiClient {:token token}))
